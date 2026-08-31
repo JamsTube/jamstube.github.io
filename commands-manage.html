@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Commands — JamsTube (Manage)</title>
+  <link rel="stylesheet" href="styles-across.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">Commands</h1>
+      <p class="site-tag">Command available in JamsTube for managing your channels.</p>
+    </div>
+  </header>
+
+  <main class="container docs">
+    <section class="doc-section">
+      <h2>Managing Commands</h2>
+      <p>
+        This page lists available commands used to manage your channels on JamsTube. Each command is described with its usage and examples.
+      </p>
+    </section>
+
+    <div class="commands-wrap">
+      <aside class="rules-panel">
+        <h3>Rules for Adding</h3>
+        <ul>
+          <li>You're can have unlimited sub-channels. But you'll wait 4 more days to add another ones.</li>
+          <li>AVOID INAPPORATIVE CONTENT, INVAILD FROM ADDING IF THERE WAS!</li>
+        </ul>
+      </aside>
+
+      <div class="commands-row">
+      <section class="command-card">
+        <div class="card-title">Add User Command</div>
+        <div class="card-body">
+          <div class="muted-small">Allows users to add themselves to the leaderboard.</div>
+
+          <div style="margin:10px 0"><strong>Example:</strong>
+            <span class="example-box">!add Example example.com/example.png</span>
+            <span class="muted-small"> — Add user named Example with profile picture example.com/example.png</span>
+          </div>
+
+          <div class="cmd-label">Command:</div>
+          <div class="cmd-box-wrapper">
+            <pre class="cmd-box">!add
+Name: Example
+Profile Picture: example.com/link/to/your/pfp.png
+Country: United Kingdom (optional)
+Content type: Vlog (optional)</pre>
+            <button class="cmd-copy-btn" title="Copy command">Copy</button>
+          </div>
+
+          <p class="muted-small">Use this command to register a user on the leaderboard. Provide the name and an image URL; country and content type are optional.</p>
+        </div>
+      </section>
+
+      <section class="command-card">
+        <div class="card-title">Change Channel Name Command</div>
+        <div class="card-body">
+          <div class="muted-small">Use this command to rename your channel to something different.</div>
+
+          <div style="margin:10px 0"><strong>Example:</strong>
+            <span class="example-box">!change name Example2</span>
+            <span class="muted-small"> — Change channel name from Example to Example2</span>
+          </div>
+
+          <div class="cmd-label">Command:</div>
+          <div class="cmd-box-wrapper">
+            <pre class="cmd-box">!change name NewName</pre>
+            <button class="cmd-copy-btn" title="Copy command">Copy</button>
+          </div>
+
+          <p class="muted-small">Fact: Your new name can affect your channel growth! They might gonna be with you if your new name is cool!</p>
+        </div>
+      </section>
+
+      <section class="command-card">
+        <div class="card-title">Change Channel Profile Picture Command</div>
+        <div class="card-body">
+          <div class="muted-small">Use this command to update your channel's profile picture.</div>
+
+          <div style="margin:10px 0"><strong>Example:</strong>
+            <span class="example-box">!change pfp new-profile-picture.png</span>
+            <span class="muted-small"> — Update channel profile picture to new-profile-picture.png</span>
+          </div>
+
+          <div class="cmd-label">Command:</div>
+          <div class="cmd-box-wrapper">
+            <pre class="cmd-box">!change pfp ImageURL</pre>
+            <button class="cmd-copy-btn" title="Copy command">Copy</button>
+          </div>
+
+          <p class="muted-small">Fact: This command can be used along with !change name:<br>
+            <code>!change name.pfp NewName ImageURL</code><br>
+            As of always, URL link is not forced and you can simply upload the image.
+          </p>
+        </div>
+      </section>
+
+      <section class="command-card">
+        <div class="card-title">Merge Channels Command (ONLY IF YOU HAVE SUB-CHANNELS)</div>
+        <div class="card-body">
+          <div class="muted-small">Merge 2 of your channels into one.</div>
+
+          <div style="margin:10px 0"><strong>Example:</strong>
+            <span class="example-box">!merge Example1 Example2</span>
+            <span class="muted-small"> — Merge Example1 and Example2 into Example1</span>
+          </div>
+
+          <div class="cmd-label">Command:</div>
+          <div class="cmd-box-wrapper">
+            <pre class="cmd-box">!merge ChannelMergeInto ChannelDeleteAfterMerge</pre>
+            <button class="cmd-copy-btn" title="Copy command">Copy</button>
+          </div>
+
+          <p class="muted-small">MERGING CHANNELS DOESN'T MEAN ADD ALL IN ONE LIKE <del>41293+3912</del>, IT'S ONLY MERGE PART OF THEM (Ex: Even Channel2 has 3912 Subs, after merge just adds 2314 of them). <strong>For balancing reasons.</strong></p>
+        </div>
+      </section>
+
+      <section class="command-card">
+        <div class="card-title">Delete Channel (DANGEROUS)</div>
+        <div class="card-body">
+          <div class="muted-small">Permanently delete a channel and all its associated data.</div>
+
+          <div style="margin:10px 0"><strong>Example:</strong>
+            <span class="example-box">!delete Example</span>
+            <span class="muted-small"> — Delete the Example channel permanently</span>
+          </div>
+
+          <div class="cmd-label">Command:</div>
+          <div class="cmd-box-wrapper">
+            <pre class="cmd-box">!delete / !del (short form) ChannelName</pre>
+            <button class="cmd-copy-btn" title="Copy command">Copy</button>
+          </div>
+          <p class="muted-small" style="color: red;">DANGEROUS — This command will permanently delete the specified channel and all its data!<br>If you doesn't have sub-channels, Channel Name is not necessary.</p>
+        </div>
+      </section>
+
+      </div>
+    </div>
+  </main>
+
+  <a class="floating-prev" href="mainpage.html" aria-label="Back to main">‹</a>
+  <a class="floating-cta" href="commands-grow.html" aria-label="Growth commands"><span class="arrow">›</span></a>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

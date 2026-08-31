@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Commands — JamsTube (Grow)</title>
+  <link rel="stylesheet" href="styles-across.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">Commands</h1>
+      <p class="site-tag">Growth and channel enhancement commands</p>
+    </div>
+  </header>
+
+  <main class="container docs">
+    <section class="doc-section">
+      <h2>Growth Commands</h2>
+      <p>
+        This page lists commands for growing your channel and climb higher in the leaderboard. And the ultimate goal: <strong>THE TOP 50</strong>
+      </p>
+    </section>
+
+    <div class="commands-wrap">
+      <aside class="rules-panel">
+        <h3>Rules</h3>
+        <ul>
+          <li>Inappropriate content will result in ignore, warnings or THE HELL DEMENSION</li>
+          <li>Videos can only have a maximum 5 per day</li>
+          <li>Shorts can only have a maximum 8 per day</li>
+          <li>Posts can only have a maximum 20 per day</li>
+          <li>3 new livestreams per day and 3 livestreams at once</li>
+          <li>Other uploading commands: all 4 per day</li>
+          <li>If you want to post a short that is the same as a video you have posted, reply that video then "!short <>"</li>
+        </ul>
+      </aside>
+
+      <div class="commands-row">
+        <section class="command-card">
+          <div class="card-title">Video/Short Customization</div>
+          <div class="card-body">
+            <div class="muted-small">Build your upload command — choose between video or short format.</div>
+
+            <div class="cmd-label" style="margin-top:18px">Select Type:</div>
+            <div style="display:flex;gap:12px;justify-content:center;margin-bottom:16px">
+              <button class="cmd-type-btn active" data-type="video">Video</button>
+              <button class="cmd-type-btn" data-type="short">Short</button>
+            </div>
+
+            <div class="cmd-label">Sub-channel (optional):</div>
+            <input type="text" id="dynamic-subchannel" placeholder="Sub-channel name..." class="cmd-subchannel-input" style="margin-bottom:16px">
+
+            <div class="cmd-label">Label:</div>
+            <input type="text" id="dynamic-label" placeholder="Enter label for your upload..." class="cmd-label-input" style="margin-bottom:16px">
+
+            <div class="cmd-label">Length:</div>
+            <div style="display:flex;gap:12px;align-items:flex-end;margin-bottom:16px;flex-wrap:wrap">
+              <select id="length-select" class="cmd-length-select">
+                <option value="none">None</option>
+                <option value="specific">Specific Duration</option>
+                <option value="approx-min">Approximate Minutes</option>
+                <option value="approx">Approximate Duration</option>
+              </select>
+
+              <div id="specific-length-inputs-wrapper" style="display:none;gap:8px;align-items:flex-end;flex-wrap:wrap">
+                <div>
+                  <div style="font-size:0.8rem;margin-bottom:4px;color:var(--card-text)">H</div>
+                  <input type="number" id="time-hours" min="0" max="99" value="0" class="time-input">
+                </div>
+                <div style="font-size:1.2rem;margin-bottom:6px;color:var(--card-text)">:</div>
+                <div>
+                  <div style="font-size:0.8rem;margin-bottom:4px;color:var(--card-text)">M</div>
+                  <input type="number" id="time-minutes" min="0" max="59" value="0" class="time-input">
+                </div>
+                <div style="font-size:1.2rem;margin-bottom:6px;color:var(--card-text)">:</div>
+                <div>
+                  <div style="font-size:0.8rem;margin-bottom:4px;color:var(--card-text)">S</div>
+                  <input type="number" id="time-seconds" min="0" max="59" value="0" class="time-input">
+                </div>
+              </div>
+
+              <div id="approx-minutes-inputs-wrapper" style="display:none;gap:8px;align-items:flex-end;flex-wrap:wrap">
+                <div>
+                  <div style="font-size:0.8rem;margin-bottom:4px;color:var(--card-text)">D</div>
+                  <input type="number" id="approx-days" min="0" max="999" value="0" class="time-input time-input-large">
+                </div>
+                <div style="font-size:1.2rem;margin-bottom:6px;color:var(--card-text)">:</div>
+                <div>
+                  <div style="font-size:0.8rem;margin-bottom:4px;color:var(--card-text)">H</div>
+                  <input type="number" id="approx-hours" min="0" max="23" value="0" class="time-input">
+                </div>
+                <div style="font-size:1.2rem;margin-bottom:6px;color:var(--card-text)">:</div>
+                <div>
+                  <div style="font-size:0.8rem;margin-bottom:4px;color:var(--card-text)">M</div>
+                  <input type="number" id="approx-minutes" min="0" max="59" value="0" class="time-input">
+                </div>
+              </div>
+
+              <select id="approx-duration-select" class="cmd-length-select" style="display:none;">
+                <option value="xxs">XXS (1-30s)</option>
+                <option value="xs">XS (30s-2m)</option>
+                <option value="short">Short (2-5m)</option>
+                <option value="medium">Medium (5-15m)</option>
+                <option value="long">Long (15m-1h)</option>
+                <option value="xl">XL (1-5h)</option>
+                <option value="xxl">XXL (5-10h)</option>
+                <option value="xxxl">3XL (10-24h)</option>
+              </select>
+            </div>
+
+            <div class="cmd-label">Plan:</div>
+            <label class="plan-toggle" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:12px">
+              <input type="checkbox" id="plan-toggle">
+              <span>Enable</span>
+            </label>
+
+            <div id="plan-options-wrapper" style="display:none;">
+              <div style="display:flex;gap:12px;align-items:flex-end;margin-bottom:16px;flex-wrap:wrap">
+                <select id="plan-type" class="cmd-length-select">
+                  <option value="none">None</option>
+                  <option value="specific">Specific time</option>
+                  <option value="relative">Relative time</option>
+                </select>
+
+                <div id="specific-time-inputs-wrapper" style="display:none;gap:8px;align-items:flex-end;flex-wrap:wrap">
+                  <div>
+                    <div style="font-size:0.8rem;margin-bottom:4px;color:var(--card-text)">Date</div>
+                    <input type="date" id="plan-date" class="time-input time-input-date">
+                  </div>
+                  <div>
+                    <div style="font-size:0.8rem;margin-bottom:4px;color:var(--card-text)">Time</div>
+                    <input type="time" id="plan-time" class="time-input time-input-time">
+                  </div>
+                </div>
+
+                <div id="relative-time-inputs-wrapper" style="display:none;gap:8px;align-items:flex-end;flex-wrap:wrap">
+                  <div>
+                    <div style="font-size:0.8rem;margin-bottom:4px;color:var(--card-text)">Value</div>
+                    <input type="number" id="relative-time-value" min="1" value="5" class="time-input time-input-large">
+                  </div>
+                  <div>
+                    <div style="font-size:0.8rem;margin-bottom:4px;color:var(--card-text)">Unit</div>
+                    <select id="relative-time-unit" class="cmd-length-select" style="max-width:150px;">
+                      <option value="minute">Minutes</option>
+                      <option value="hour">Hours</option>
+                      <option value="day">Days</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cmd-label">Command:</div>
+            <div class="cmd-box-wrapper">
+              <pre class="cmd-box" id="dynamic-cmd">!video</pre>
+              <button class="cmd-copy-btn" title="Copy command">Copy</button>
+            </div>
+
+            <p class="muted-small" style="margin-top:12px">Select the type above to generate the command. Copy and paste into chat when ready.</p>
+          </div>
+        </section>
+
+        <section class="command-card">
+          <div class="card-title">Live Customization</div>
+          <div class="card-body">
+            <div class="muted-small">Build your livestream command, again...</div>
+
+            <div class="cmd-label" style="margin-top:18px">Sub-channel (optional):</div>
+            <input type="text" id="live-subchannel" placeholder="Sub-channel name..." class="cmd-subchannel-input" style="margin-bottom:16px">
+
+            <div class="cmd-label">Label:</div>
+            <input type="text" id="live-label" placeholder="Enter label for your livestream..." class="cmd-label-input" style="margin-bottom:16px">
+
+            <div class="cmd-label">End Time:</div>
+            <div style="display:flex;gap:12px;align-items:flex-end;margin-bottom:16px;flex-wrap:wrap">
+              <select id="live-end-time-type" class="cmd-length-select">
+                <option value="none">None</option>
+                <option value="specific">Specific time</option>
+                <option value="relative">Relative time</option>
+                <option value="custom">Custom</option>
+              </select>
+
+              <div id="live-specific-time-inputs-wrapper" style="display:none;gap:8px;align-items:flex-end;flex-wrap:wrap">
+                <div>
+                  <div style="font-size:0.8rem;margin-bottom:4px;color:var(--card-text)">Date</div>
+                  <input type="date" id="live-end-date" class="time-input time-input-date">
+                </div>
+                <div>
+                  <div style="font-size:0.8rem;margin-bottom:4px;color:var(--card-text)">Time</div>
+                  <input type="time" id="live-end-time" class="time-input time-input-time">
+                </div>
+              </div>
+
+              <div id="live-relative-time-inputs-wrapper" style="display:none;gap:8px;align-items:flex-end;flex-wrap:wrap">
+                <div>
+                  <div style="font-size:0.8rem;margin-bottom:4px;color:var(--card-text)">Value</div>
+                  <input type="number" id="live-relative-value" min="1" value="5" class="time-input time-input-large">
+                </div>
+                <div>
+                  <div style="font-size:0.8rem;margin-bottom:4px;color:var(--card-text)">Unit</div>
+                  <select id="live-relative-unit" class="cmd-length-select" style="max-width:150px;">
+                    <option value="minute">Minutes</option>
+                    <option value="hour">Hours</option>
+                    <option value="day">Days</option>
+                  </select>
+                </div>
+              </div>
+
+              <div id="live-custom-input-wrapper" style="display:none;gap:8px;align-items:flex-end;flex-wrap:wrap">
+                <input type="text" id="live-custom-text" placeholder="Custom end time text..." class="cmd-label-input">
+              </div>
+            </div>
+
+            <div class="cmd-label">Command:</div>
+            <div class="cmd-box-wrapper">
+              <pre class="cmd-box" id="live-cmd">!live</pre>
+              <button class="cmd-copy-btn" title="Copy command">Copy</button>
+            </div>
+
+            <p class="muted-small" style="margin-top:12px">A video+short one, now livestreams too. Cool!</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <a class="floating-prev" href="commands-manage.html" aria-label="Back to manage">‹</a>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

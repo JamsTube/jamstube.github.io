@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&display=swap');
+@font-face {
+	font-family: VCR OSD Mono;
+	src: url(./VCR_OSD_MONO_1.001.ttf) format("truetype");
+}
+
+:root{
+	--bg: #f6f7f9;
+	--surface: rgba(255,255,255,0.06);
+	--surface-card: #ffffff;
+	--muted: rgba(255,255,255,0.85);
+	--text: #ffffff;
+	--card-text: #111315;
+	--accent: rgb(200,50,50);
+	--accent-dark: rgb(220,50,50);
+	--radius: 12px;
+	--container: 1100px;
+	--shadow: 0 6px 20px rgba(0,0,0,0.18);
+	--glass: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+
+/* Display fonts */
+h1, h2, h3, h4, h5, h6{font-family:'VCR OSD Mono',monospace}
+
+body{
+	margin:0;
+	font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	font-size:18px;
+	background: linear-gradient(180deg, var(--accent-dark), var(--accent));
+	color:var(--text);
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	line-height:1.6;
+}
+
+.container{
+	max-width:var(--container);
+	margin:0 auto;
+	padding:28px 20px;
+	text-align:center;
+}
+
+.site-header{
+	background: transparent;
+	border-bottom: 1px solid rgba(255,255,255,0.06);
+	backdrop-filter: blur(6px);
+	--webkit-backdrop-filter: blur(6px);
+}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.site-title{font-size:2rem;margin:0;color:var(--text);font-family:'VCR OSD Mono',monospace}
+.site-tag{margin:6px 0 0;color:var(--muted)}
+
+.doc-nav{background:transparent;border-bottom:1px solid rgba(255,255,255,0.06)}
+.doc-nav .container{display:flex;gap:18px;align-items:center;justify-content:center}
+.doc-nav a{color:var(--muted);text-decoration:none;padding:12px 8px;border-radius:8px;font-weight:600}
+.doc-nav a:hover{color:var(--text);background:rgba(255,255,255,0.08)}
+
+.docs{padding-top:32px;padding-bottom:64px}
+.doc-section{background:var(--surface-card);border-radius:var(--radius);box-shadow:0 18px 48px rgba(0,0,0,0.22);padding:34px;margin:36px auto 28px;max-width:920px;text-align:center;border:1px solid rgba(16,20,24,0.06)}
+.doc-section h2{margin-top:0;font-size:1.6rem;color:var(--card-text);font-family:'VCR OSD Mono',monospace}
+.doc-section, .doc-section p, .doc-section a{color:var(--card-text)}
+
+.placeholder{
+	padding:14px;border-radius:10px;border:1px dashed rgba(16,20,24,0.06);
+	background:linear-gradient(180deg, rgba(0,0,0,0.01), rgba(0,0,0,0.005));
+	color:var(--muted);
+}
+
+button, .btn{
+	display:inline-block;padding:10px 14px;border-radius:10px;border:0;background:#ffffff22;
+	color:var(--text);font-weight:600;cursor:pointer;border:1px solid rgba(255,255,255,0.08)
+}
+button:hover, .btn:hover{background:rgba(255,255,255,0.12)}
+
+.btn-large{
+	padding:14px 22px;border-radius:12px;font-size:1.05rem;background:#ffffff;color:var(--accent-dark);font-weight:700;border:0;box-shadow:0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Floating right CTA */
+.floating-cta{
+	position:fixed;right:36px;top:50%;transform:translateY(-50%);width:56px;height:56px;background:#ffffff;color:var(--card-text);font-size:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,0.16);z-index:40;border:0}
+.floating-cta:active{transform:translateY(-50%) scale(0.98)}
+.floating-cta .arrow{transform:translateX(2px)}
+
+/* Command card styles */
+.command-card{
+	max-width:920px;margin:20px auto;padding:0;border-radius:12px;overflow:hidden;border:1px solid rgba(16,20,24,0.06);box-shadow:0 18px 40px rgba(0,0,0,0.12);background:var(--surface-card);flex:0 0 820px
+}
+.command-card .card-title{
+	background:linear-gradient(180deg,var(--accent-dark),var(--accent));color:#fff;padding:18px 22px;font-weight:700;font-size:1.05rem;font-family:'VCR OSD Mono',monospace
+}
+.command-card .card-body{padding:20px 22px;color:var(--card-text);text-align:left}
+.command-card .muted-small{color:#6b6f76;font-size:0.95rem;margin-bottom:12px}
+.command-card .example-box{display:inline-block;background:#f6f7f9;padding:6px 10px;border-radius:6px;border:1px solid rgba(16,20,24,0.04);font-family:'Google Sans Code',monospace;font-size:0.95rem}
+.command-card .cmd-label{display:block;font-weight:700;margin-top:14px;margin-bottom:8px}
+.command-card .cmd-box{background:#f3f4f6;border-radius:8px;padding:12px;font-family:'Google Sans Code',monospace;font-size:0.95rem;border:1px solid rgba(16,20,24,0.04);white-space:pre-wrap}
+.command-actions{margin-top:12px;display:flex;gap:10px;align-items:center}
+.command-actions .btn{background:var(--accent);color:white;border-radius:8px;padding:8px 12px}
+.command-actions .btn.secondary{background:#fff;color:var(--accent-dark);border:1px solid rgba(0,0,0,0.06)}
+
+/* Commands horizontal scroller */
+.commands-row{display:flex;gap:18px;overflow-x:auto;padding:18px 12px;scroll-snap-type:x mandatory}
+.commands-row::-webkit-scrollbar{height:10px}
+.commands-row::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.12);border-radius:8px}
+.command-card{scroll-snap-align:center}
+
+/* Floating left back button */
+.floating-prev{position:fixed;left:18px;top:50%;transform:translateY(-50%);width:56px;height:56px;background:#ffffff;color:var(--card-text);font-size:26px;display:flex;align-items:center;justify-content:center;border-radius:8px;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,0.16);z-index:40;border:0}
+.floating-prev:active{transform:translateY(-50%) scale(0.98)}
+
+/* Wrapper and rules panel behind cards */
+.commands-wrap{position:relative;padding:0}
+.rules-panel{margin:0 auto 28px;padding:20px 24px;border-radius:12px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.18);max-width:920px;color:var(--text)}
+.rules-panel h3{margin:0 0 12px 0;color:#fff;font-size:1.05rem;font-family:'VCR OSD Mono',monospace}
+.rules-panel ul{margin:0;padding-left:20px;color:rgba(255,255,255,0.95)}
+.rules-panel li{margin-bottom:6px}
+.commands-row{position:relative}
+.command-card{position:relative}
+
+code, pre{font-family: 'Google Sans Code', monospace;background:#f3f4f6;padding:3px 6px;border-radius:6px}
+
+.site-footer{padding:18px 0;text-align:center;color:var(--muted)}
+
+@media (max-width:720px){
+	.doc-nav .container{flex-wrap:wrap}
+	.site-title{font-size:1.1rem}
+	.container{padding:18px}
+	.site-header .container{flex-direction:column;gap:8px}
+}
+
+/* Utility classes */
+.muted{color:var(--muted)}
+.accent{color:var(--accent)}
+
+/* Dynamic command builder buttons */
+.cmd-type-btn{
+	padding:10px 16px;border-radius:8px;border:1px solid rgba(16,20,24,0.12);background:#fff;color:var(--card-text);font-weight:600;cursor:pointer;transition:all 0.2s ease;font-size:0.95rem
+}
+.cmd-type-btn:hover{background:#f0f0f0;border-color:rgba(16,20,24,0.2)}
+.cmd-type-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* Command label input */
+.cmd-label-input{
+	width:100%;max-width:500px;padding:10px 12px;border-radius:8px;border:1px solid rgba(16,20,24,0.12);font-size:0.95rem;font-family:inherit;background:#fff;color:var(--card-text)
+}
+.cmd-label-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 2px rgba(200,50,50,0.1)}
+
+/* Command sub-channel input (narrower) */
+.cmd-subchannel-input{
+	width:100%;max-width:200px;padding:10px 12px;border-radius:8px;border:1px solid rgba(16,20,24,0.12);font-size:0.95rem;font-family:inherit;background:#fff;color:var(--card-text)
+}
+.cmd-subchannel-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 2px rgba(200,50,50,0.1)}
+
+/* Length select dropdown */
+.cmd-length-select{
+	width:100%;max-width:300px;padding:10px 12px;border-radius:8px;border:1px solid rgba(16,20,24,0.12);font-size:0.95rem;font-family:inherit;background:#fff;color:var(--card-text);cursor:pointer
+}
+.cmd-length-select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 2px rgba(200,50,50,0.1)}
+
+/* Time input boxes */
+.time-input{
+	width:50px;padding:8px 6px;border-radius:6px;border:1px solid rgba(16,20,24,0.12);font-size:1rem;font-family:inherit;background:#fff;color:var(--card-text);text-align:center
+}
+.time-input-large{
+	width:72px
+}
+.time-input-date,
+.time-input-time{
+	width:140px
+}
+.time-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 2px rgba(200,50,50,0.1)}
+
+/* Command box wrapper with copy button */
+.cmd-box-wrapper{position:relative;display:inline-block;width:100%;max-width:600px}
+.cmd-copy-btn{position:absolute;right:10px;top:10px;padding:6px 12px;background:var(--accent);color:#fff;border:0;border-radius:6px;cursor:pointer;font-size:0.85rem;font-weight:600;transition:all 0.2s ease;z-index:10}
+.cmd-copy-btn:hover{background:var(--accent-dark)}
+.cmd-copy-btn.copied{background:#4caf50;color:#fff}
+.cmd-copy-btn.copied::after{content:" ✓"}
+
